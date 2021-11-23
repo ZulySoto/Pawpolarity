@@ -1,0 +1,16 @@
+Experiment 12: Random Forest with group, accessory, human
+420.6622512481106
+0.0007791103329196636
+0.000386645182388512
+Experiment 13: Random Forest with group, accessory, human five times
+426.4432954124629
+-0.00020534193755119556
+-0.00044888596954273385
+Experiment 14: Random Forest with group, accessory, human 10 times
+420.83838304034214
+0.00010605819858244825
+-0.0007673870687251339
+Experiment 15: Random Forest with group, accessory, human 15 times
+426.33084517030477
+-0.000415668672201559
+-0.0008802539886822928

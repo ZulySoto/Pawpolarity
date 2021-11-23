@@ -1,0 +1,63 @@
+Experiment 1: Looking for the Relationship between the features
+Experiment 1
+447.60034542130995
+-0.0006990091774614626
+-0.00109124491022361
+Feature 0, Score 0.00000
+Feature 1, Score 0.00000
+Feature 2, Score 0.40218
+Feature 3, Score 0.99533
+Feature 4, Score 1.64468
+Feature 5, Score 0.00000
+Feature 6, Score 1.19199
+Feature 7, Score 0.52265
+Feature 8, Score 0.16402
+Feature 9, Score 0.00000
+Feature 10, Score 0.00000
+Feature 11, Score 0.00000
+Experiment 2: Group, accessory, face, human, near
+Experiment 2
+442.25693646637427
+-0.0014065230013384777
+-0.0018725824810748026
+Feature 0, Score 1.49643
+Feature 1, Score 1.20995
+Feature 2, Score 0.00000
+Feature 3, Score 0.97668
+Feature 4, Score 0.00000
+Experiment 3: Group, Accessory, Human, Near, Face
+Experiment 3
+410.32868443765966
+-0.0009196008815486323
+-0.001003962859833063
+Feature 0, Score 1.57894
+Feature 1, Score 0.69802
+Feature 2, Score 0.36602
+Feature 3, Score 1.16280
+Feature 4, Score 0.04224
+Experiment 4: Group, accessory, human, face
+Experiment 4
+425.1516359805422
+-1.249529112401504e-06
+-0.000539591720888799
+Feature 0, Score 1.39775
+Feature 1, Score 1.13286
+Feature 2, Score 0.58545
+Feature 3, Score 0.26151
+Experiment 5: Group, accessory, face, human
+Experiment 5
+405.64983034125805
+0.00024182743726308686
+-0.0004435283134971435
+Feature 0, Score 0.59012
+Feature 1, Score 1.49636
+Feature 2, Score 0.81435
+Feature 3, Score 0.00979
+Experiment 6: Runs on Group, accessory, human
+Experiment 6
+439.1526977295737
+-0.0016236752510414565
+-0.0017440437194511382
+Feature 0, Score 1.74971
+Feature 1, Score 1.50412
+Feature 2, Score 0.25780

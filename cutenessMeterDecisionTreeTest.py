@@ -169,177 +169,14 @@ info = np.array(info).astype(dtype = float)
 blur = np.array(blur).astype(dtype = float)
 labels = np.array(labels).astype(dtype = float)
 
-#Experiment 7: Decision Tree on group,  accessory, human, five times
-print("Experiment 7: Decision Tree on group,  accessory, human, five times")
+#Experiment 7: Decision Tree on group, accessory, human, near, face
+print("Experiment 7: Decision Tree on group, accessory, human, near, face")
 featuresForModel = []
 featuresForModel.append(group)
 featuresForModel.append(accessory)
 featuresForModel.append(human)
-featuresForModel = np.asarray(featuresForModel)
-
-featuresForModel = featuresForModel.transpose()
-
-count = 0
-accuracyR2Score = 0
-accuracyVariance = 0
-accuracyMeanSquared = 0
-regressionModel = DecisionTreeRegressor(criterion = "mse")
-while(count < 5):
-    xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
-    regressionModel.fit(xtrain, ytrain)
-    prediction = regressionModel.predict(xtest)
-    accuracyMeanSquared = accuracyMeanSquared + metrics.mean_squared_error(ytest, prediction)
-    accuracyVariance = accuracyVariance + metrics.explained_variance_score(ytest, prediction)
-    accuracyR2Score = accuracyR2Score + metrics.r2_score(ytest,prediction)
-
-    count = count + 1
-accuracyMeanSquared = accuracyMeanSquared / 5
-accuracyVariance = accuracyVariance / 5
-accuracyR2Score = accuracyR2Score / 5
-
-print(accuracyMeanSquared)
-print(accuracyVariance)
-print(accuracyR2Score)
-
-
-#Experiment 8: Decision Tree on group,  accessory, human, 10 times
-print("Experiment 8: Decision Tree on group,  accessory, human, 10 times")
-accuracyR2Score = 0
-accuracyVariance = 0
-accuracyMeanSquared = 0
-
-featuresForModel = []
-featuresForModel.append(group)
-featuresForModel.append(accessory)
-featuresForModel.append(human)
-featuresForModel = np.asarray(featuresForModel)
-
-featuresForModel = featuresForModel.transpose()
-
-count = 0
-regressionModel = DecisionTreeRegressor(criterion = "mse")
-while(count < 10):
-    xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
-    regressionModel.fit(xtrain, ytrain)
-    prediction = regressionModel.predict(xtest)
-    accuracyMeanSquared = accuracyMeanSquared + metrics.mean_squared_error(ytest, prediction)
-    accuracyVariance = accuracyVariance + metrics.explained_variance_score(ytest, prediction)
-    accuracyR2Score = accuracyR2Score + metrics.r2_score(ytest,prediction)
-
-    count = count + 1
-accuracyMeanSquared = accuracyMeanSquared / 10
-accuracyVariance = accuracyVariance / 10
-accuracyR2Score = accuracyR2Score / 10
-
-print(accuracyMeanSquared)
-print(accuracyVariance)
-print(accuracyR2Score)
-
-#Experiment 9: Decision Tree on group, accessory, face, human, 5 times
-print("Experiment 9: Decision Tree on group,  accessory, human, 5 times")
-accuracyR2Score = 0
-accuracyVariance = 0
-accuracyMeanSquared = 0
-
-featuresForModel = []
-featuresForModel.append(group)
-featuresForModel.append(accessory)
-featuresForModel.append(human)
-featuresForModel = np.asarray(featuresForModel)
-
-featuresForModel = featuresForModel.transpose()
-
-count = 0
-regressionModel = DecisionTreeRegressor(criterion = "mse")
-while(count < 5):
-    xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
-    regressionModel.fit(xtrain, ytrain)
-    prediction = regressionModel.predict(xtest)
-    accuracyMeanSquared = accuracyMeanSquared + metrics.mean_squared_error(ytest, prediction)
-    accuracyVariance = accuracyVariance + metrics.explained_variance_score(ytest, prediction)
-    accuracyR2Score = accuracyR2Score + metrics.r2_score(ytest,prediction)
-
-    count = count + 1
-accuracyMeanSquared = accuracyMeanSquared / 5
-accuracyVariance = accuracyVariance / 5
-accuracyR2Score = accuracyR2Score / 5
-
-print(accuracyMeanSquared)
-print(accuracyVariance)
-print(accuracyR2Score)
-
-#Experiment 10: Decision Tree on group, accessory, face, human, 10 times
-print("Experiment 10: Decision Tree on group, accessory, human, 10 times")
-accuracyR2Score = 0
-accuracyVariance = 0
-accuracyMeanSquared = 0
-
-featuresForModel = []
-featuresForModel.append(group)
-featuresForModel.append(accessory)
-featuresForModel.append(human)
-featuresForModel = np.asarray(featuresForModel)
-
-featuresForModel = featuresForModel.transpose()
-
-count = 0
-regressionModel = DecisionTreeRegressor(criterion = "mse")
-while(count < 10):
-    xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
-    regressionModel.fit(xtrain, ytrain)
-    prediction = regressionModel.predict(xtest)
-    accuracyMeanSquared = accuracyMeanSquared + metrics.mean_squared_error(ytest, prediction)
-    accuracyVariance = accuracyVariance + metrics.explained_variance_score(ytest, prediction)
-    accuracyR2Score = accuracyR2Score + metrics.r2_score(ytest,prediction)
-
-    count = count + 1
-accuracyMeanSquared = accuracyMeanSquared / 10
-accuracyVariance = accuracyVariance / 10
-accuracyR2Score = accuracyR2Score / 10
-
-print(accuracyMeanSquared)
-print(accuracyVariance)
-print(accuracyR2Score)
-
-#Experiment 11: Decision Tree on group, accessory, face, human, 15 times
-print("Experiment 11: Decision Tree on group, accessory, human, 15 times")
-accuracyR2Score = 0
-accuracyVariance = 0
-accuracyMeanSquared = 0
-
-featuresForModel = []
-featuresForModel.append(group)
-featuresForModel.append(accessory)
-featuresForModel.append(human)
-featuresForModel = np.asarray(featuresForModel)
-
-featuresForModel = featuresForModel.transpose()
-
-count = 0
-regressionModel = DecisionTreeRegressor(criterion = "mse")
-while(count < 15):
-    xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
-    regressionModel.fit(xtrain, ytrain)
-    prediction = regressionModel.predict(xtest)
-    accuracyMeanSquared = accuracyMeanSquared + metrics.mean_squared_error(ytest, prediction)
-    accuracyVariance = accuracyVariance + metrics.explained_variance_score(ytest, prediction)
-    accuracyR2Score = accuracyR2Score + metrics.r2_score(ytest,prediction)
-
-    count = count + 1
-accuracyMeanSquared = accuracyMeanSquared / 15
-accuracyVariance = accuracyVariance / 15
-accuracyR2Score = accuracyR2Score / 15
-
-print(accuracyMeanSquared)
-print(accuracyVariance)
-print(accuracyR2Score)
-
-#Experiment 12: Decision Tree on group,  accessory, human, five times
-print("Experiment 12: Decision Tree on group,  accessory, human, five times")
-featuresForModel = []
-featuresForModel.append(group)
-featuresForModel.append(accessory)
-featuresForModel.append(human)
+featuresForModel.append(near)
+featuresForModel.append(face)
 featuresForModel = np.asarray(featuresForModel)
 
 featuresForModel = featuresForModel.transpose()
@@ -361,6 +198,178 @@ while(count < 1):
 accuracyMeanSquared = accuracyMeanSquared
 accuracyVariance = accuracyVariance
 accuracyR2Score = accuracyR2Score
+
+print(accuracyMeanSquared)
+print(accuracyVariance)
+print(accuracyR2Score)
+
+#Experiment 8: Decision Tree on group, accessory, human, near, face five times
+print("Experiment 8: Decision Tree on group, accessory, human, near, face  5 times")
+featuresForModel = []
+featuresForModel.append(group)
+featuresForModel.append(accessory)
+featuresForModel.append(human)
+featuresForModel.append(near)
+featuresForModel.append(face)
+featuresForModel = np.asarray(featuresForModel)
+
+featuresForModel = featuresForModel.transpose()
+
+count = 0
+accuracyR2Score = 0
+accuracyVariance = 0
+accuracyMeanSquared = 0
+regressionModel = DecisionTreeRegressor(criterion = "mse")
+while(count < 5):
+    xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
+    regressionModel.fit(xtrain, ytrain)
+    prediction = regressionModel.predict(xtest)
+    accuracyMeanSquared = accuracyMeanSquared + metrics.mean_squared_error(ytest, prediction)
+    accuracyVariance = accuracyVariance + metrics.explained_variance_score(ytest, prediction)
+    accuracyR2Score = accuracyR2Score + metrics.r2_score(ytest,prediction)
+
+    count = count + 1
+accuracyMeanSquared = accuracyMeanSquared / 5
+accuracyVariance = accuracyVariance / 5
+accuracyR2Score = accuracyR2Score / 5
+
+print(accuracyMeanSquared)
+print(accuracyVariance)
+print(accuracyR2Score)
+
+#Experiment 9: Decision Tree on group, accessory, human, near, face 10 times
+print("Experiment 9: Decision Tree on group, accessory, human, near, face 10 times")
+featuresForModel = []
+featuresForModel.append(group)
+featuresForModel.append(accessory)
+featuresForModel.append(human)
+featuresForModel.append(near)
+featuresForModel.append(face)
+featuresForModel = np.asarray(featuresForModel)
+
+featuresForModel = featuresForModel.transpose()
+
+count = 0
+accuracyR2Score = 0
+accuracyVariance = 0
+accuracyMeanSquared = 0
+regressionModel = DecisionTreeRegressor(criterion = "mse")
+while(count < 10):
+    xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
+    regressionModel.fit(xtrain, ytrain)
+    prediction = regressionModel.predict(xtest)
+    accuracyMeanSquared = accuracyMeanSquared + metrics.mean_squared_error(ytest, prediction)
+    accuracyVariance = accuracyVariance + metrics.explained_variance_score(ytest, prediction)
+    accuracyR2Score = accuracyR2Score + metrics.r2_score(ytest,prediction)
+
+    count = count + 1
+accuracyMeanSquared = accuracyMeanSquared / 10
+accuracyVariance = accuracyVariance / 10
+accuracyR2Score = accuracyR2Score / 10
+
+print(accuracyMeanSquared)
+print(accuracyVariance)
+print(accuracyR2Score)
+
+
+
+#Experiment 10: Decision Tree on group, accessory, face, human
+print("Experiment 10: Decision Tree on group, accessory, face, human")
+accuracyR2Score = 0
+accuracyVariance = 0
+accuracyMeanSquared = 0
+
+featuresForModel = []
+featuresForModel.append(group)
+featuresForModel.append(accessory)
+featuresForModel.append(face)
+featuresForModel.append(human)
+featuresForModel = np.asarray(featuresForModel)
+
+featuresForModel = featuresForModel.transpose()
+
+count = 0
+regressionModel = DecisionTreeRegressor(criterion = "mse")
+while(count < 1):
+    xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
+    regressionModel.fit(xtrain, ytrain)
+    prediction = regressionModel.predict(xtest)
+    accuracyMeanSquared = accuracyMeanSquared + metrics.mean_squared_error(ytest, prediction)
+    accuracyVariance = accuracyVariance + metrics.explained_variance_score(ytest, prediction)
+    accuracyR2Score = accuracyR2Score + metrics.r2_score(ytest,prediction)
+
+    count = count + 1
+accuracyMeanSquared = accuracyMeanSquared
+accuracyVariance = accuracyVariance
+accuracyR2Score = accuracyR2Score
+
+print(accuracyMeanSquared)
+print(accuracyVariance)
+print(accuracyR2Score)
+
+#Experiment 11: Decision Tree on group, accessory, face, human 5 times
+print("Experiment 11: Decision Tree on group, accessory, face, human 5 times")
+accuracyR2Score = 0
+accuracyVariance = 0
+accuracyMeanSquared = 0
+
+featuresForModel = []
+featuresForModel.append(group)
+featuresForModel.append(accessory)
+featuresForModel.append(face)
+featuresForModel.append(human)
+featuresForModel = np.asarray(featuresForModel)
+
+featuresForModel = featuresForModel.transpose()
+
+count = 0
+regressionModel = DecisionTreeRegressor(criterion = "mse")
+while(count < 5):
+    xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
+    regressionModel.fit(xtrain, ytrain)
+    prediction = regressionModel.predict(xtest)
+    accuracyMeanSquared = accuracyMeanSquared + metrics.mean_squared_error(ytest, prediction)
+    accuracyVariance = accuracyVariance + metrics.explained_variance_score(ytest, prediction)
+    accuracyR2Score = accuracyR2Score + metrics.r2_score(ytest,prediction)
+
+    count = count + 1
+accuracyMeanSquared = accuracyMeanSquared / 5
+accuracyVariance = accuracyVariance / 5
+accuracyR2Score = accuracyR2Score / 5
+
+print(accuracyMeanSquared)
+print(accuracyVariance)
+print(accuracyR2Score)
+
+#Experiment 12: Decision Tree on group, accessory, face, human 5 times
+print("Experiment 12: Decision Tree on group, accessory, face, human 5 times")
+accuracyR2Score = 0
+accuracyVariance = 0
+accuracyMeanSquared = 0
+
+featuresForModel = []
+featuresForModel.append(group)
+featuresForModel.append(accessory)
+featuresForModel.append(face)
+featuresForModel.append(human)
+featuresForModel = np.asarray(featuresForModel)
+
+featuresForModel = featuresForModel.transpose()
+
+count = 0
+regressionModel = DecisionTreeRegressor(criterion = "mse")
+while(count < 10):
+    xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
+    regressionModel.fit(xtrain, ytrain)
+    prediction = regressionModel.predict(xtest)
+    accuracyMeanSquared = accuracyMeanSquared + metrics.mean_squared_error(ytest, prediction)
+    accuracyVariance = accuracyVariance + metrics.explained_variance_score(ytest, prediction)
+    accuracyR2Score = accuracyR2Score + metrics.r2_score(ytest,prediction)
+
+    count = count + 1
+accuracyMeanSquared = accuracyMeanSquared / 10
+accuracyVariance = accuracyVariance / 10
+accuracyR2Score = accuracyR2Score / 10
 
 print(accuracyMeanSquared)
 print(accuracyVariance)

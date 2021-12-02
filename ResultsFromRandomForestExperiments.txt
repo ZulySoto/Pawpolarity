@@ -1,16 +1,24 @@
-Experiment 12: Random Forest with group, accessory, human
-420.6622512481106
-0.0007791103329196636
-0.000386645182388512
-Experiment 13: Random Forest with group, accessory, human five times
-426.4432954124629
--0.00020534193755119556
--0.00044888596954273385
-Experiment 14: Random Forest with group, accessory, human 10 times
-420.83838304034214
-0.00010605819858244825
--0.0007673870687251339
-Experiment 15: Random Forest with group, accessory, human 15 times
-426.33084517030477
--0.000415668672201559
--0.0008802539886822928
+Experiment 13: Random Forest with group, accessory, human
+420.29819344998447
+-0.003530750973453012
+-0.0038671898001267913
+Experiment 14: Random Forest with group, accessory, human, near, face five times
+424.07507587164156
+-0.002264211742610378
+-0.0023560234984958406
+Experiment 15: Random Forest with group, accessory, human, near, face 10 times
+419.042301979818
+-0.0019497892242352987
+-0.002565682225016919
+Experiment 16: Random Forest with group, accessory, face, human
+420.4580186664855
+1.233027221969607e-05
+-0.0013856129514608906
+Experiment 17: Random Forest with group, accessory, face, human five times
+426.3874386832983
+0.00010253539845577198
+-0.00018221829141429335
+Experiment 18: Random Forest with group, accessory, face, human 10 times
+421.60696371653404
+-0.0018243721744758633
+-0.0021983556236695456

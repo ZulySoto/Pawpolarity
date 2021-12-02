@@ -1,25 +1,24 @@
-Experiment 7: Decision Tree on group,  accessory, human, five times
-413.0988913045102
--0.00083283808761625
--0.0022856815154822076
-Experiment 8: Decision Tree on group,  accessory, human, 10 times
-426.9409692980407
--0.0010454385509570119
--0.001327810001093188
-Experiment 9: Decision Tree on group,  accessory, human, 5 times
-425.4526100767906
--0.0009817142115899902
--0.0011483020043330683
-Experiment 10: Decision Tree on group, accessory, human, 10 times
-421.4532042138323
--0.00017958231750565546
--0.0005795399220698272
-Experiment 11: Decision Tree on group, accessory, human, 15 times
-423.2414497529335
--0.0003183235335936304
--0.001545376207021339
-
-Experiment 12: Only once 
-420.418016956141
--0.0012950364935486736
--0.0013333439374865197
+Experiment 7: Decision Tree on group, accessory, human, near, face
+425.08431103933606
+-0.0016518389451323223
+-0.0031740529715993393
+Experiment 8: Decision Tree on group, accessory, human, near, face  5 times
+422.5749483491444
+-0.0013499775619670196
+-0.001623719604344953
+Experiment 9: Decision Tree on group, accessory, human, near, face 10 times
+420.16882850263966
+-0.002531057803884551
+-0.003268898048208224
+Experiment 10: Decision Tree on group, accessory, face, human
+431.06062469888354
+-0.0024912836571140407
+-0.0029126484582573386
+Experiment 11: Decision Tree on group, accessory, face, human 5 times
+421.3318471297654
+-0.0014827618836123157
+-0.0020133377636075258
+Experiment 12: Decision Tree on group, accessory, face, human 5 times
+422.06489298413953
+-0.0016291270906661382
+-0.001955169381452915

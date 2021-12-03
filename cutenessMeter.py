@@ -169,52 +169,29 @@ info = np.array(info).astype(dtype = float)
 blur = np.array(blur).astype(dtype = float)
 labels = np.array(labels).astype(dtype = float)
 
-features = []
-features.append(focus)
-features.append(eyes)
-features.append(face)
-features.append(near)
-features.append(action)
-features.append(accessory)
-features.append(group)
-features.append(collage)
-features.append(human)
-features.append(occlussion)
-features.append(info)
-features.append(blur)
+featuresForModel = []
+featuresForModel.append(focus)
+featuresForModel.append(eyes)
+featuresForModel.append(face)
+featuresForModel.append(near)
+featuresForModel.append(action)
+featuresForModel.append(accessory)
+featuresForModel.append(group)
+featuresForModel.append(collage)
+featuresForModel.append(human)
+featuresForModel.append(occlussion)
+featuresForModel.append(info)
+featuresForModel.append(blur)
 
-npFeatures = np.asarray(features)
-npFeaturesT = np.asarray(features)
-print(npFeatures.shape)
-print(labels.shape)
-npFeatures = npFeatures.transpose()
+featuresForModel = np.asarray(featuresForModel)
+featuresForModel = featuresForModel.transpose()
 
-f = []
-f.append(face)
-f.append(group)
-f.append(accessory)
-
-f = np.asarray(f)
-f = f.transpose()
 
 model = LinearRegression(positive = True)
 #model.fit(npFeatures, labels)
-model.fit(npFeatures, labels)
+model.fit(featuresForModel, labels)
 
-importance = model.coef_
 
-for i,v in enumerate(importance):
-    print('Feature %0d, Score %0.5f' % (i,v))
-
-featuresForModel = []
-featuresForModel.append(group)
-featuresForModel.append(accessory)
-featuresForModel.append(face)
-featuresForModel.append(human)
-featuresForModel.append(near)
-featuresForModel = np.asarray(featuresForModel)
-
-featuresForModel = featuresForModel.transpose()
 #xtrain, xtest, ytrain, ytest = train_test_split(npFeatures, labels)
 xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
 model = LinearRegression(positive = True)

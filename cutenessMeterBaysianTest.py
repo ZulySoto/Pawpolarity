@@ -4,13 +4,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from sklearn import metrics
-from sklearn.tree import plot_tree
-from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 
-from sklearn.svm import SVR
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.linear_model import BayesianRidge
 
 #Gets Data from file
 def readData(filename):
@@ -85,29 +81,49 @@ header, trainData = readData('./petfinder-pawpularity-score/train.csv')
 fileNames, focus, eyes, face, near, action, accessory, group, collage, human, occlussion, info, blur, labels = splitData(trainData)
 focus, eyes, face, near, action, accessory, group, collage, human, occlussion, info, blur, labels = numpyArrayCreation(focus, eyes, face, near, action, accessory, group, collage, human, occlussion, info, blur, labels)
 
+print("Testing Bayesian on group, accessory, human, near, and face")
+
 featuresForModel = []
 featuresForModel.append(group)
 featuresForModel.append(accessory)
-featuresForModel.append(face)
 featuresForModel.append(human)
 featuresForModel.append(near)
+featuresForModel.append(face)
 featuresForModel = np.asarray(featuresForModel)
-
 featuresForModel = featuresForModel.transpose()
-#xtrain, xtest, ytrain, ytest = train_test_split(npFeatures, labels)
-xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
-model = LinearRegression(positive = True)
-#model.fit(npFeatures, labels)
-model.fit(xtrain, ytrain)
-prediction = model.predict(xtest)
 
-regressionModel = RandomForestRegressor(criterion = "poisson")
+xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
+
+regressionModel = BayesianRidge()
 regressionModel.fit(xtrain, ytrain)
 prediction = regressionModel.predict(xtest)
 accuracyMeanSquared = metrics.mean_squared_error(ytest, prediction)
 accuracyVariance = metrics.explained_variance_score(ytest, prediction)
 accuracyR2Score = metrics.r2_score(ytest,prediction)
-print("Random Forest with poisson")
+print("Bayesian")
+print(accuracyMeanSquared)
+print(accuracyVariance)
+print(accuracyR2Score)
+
+print("Testing Bayesian on group, accessory, human, and face")
+
+featuresForModel = []
+featuresForModel.append(group)
+featuresForModel.append(accessory)
+featuresForModel.append(face)
+featuresForModel.append(human)
+featuresForModel = np.asarray(featuresForModel)
+featuresForModel = featuresForModel.transpose()
+
+xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
+
+regressionModel = BayesianRidge()
+regressionModel.fit(xtrain, ytrain)
+prediction = regressionModel.predict(xtest)
+accuracyMeanSquared = metrics.mean_squared_error(ytest, prediction)
+accuracyVariance = metrics.explained_variance_score(ytest, prediction)
+accuracyR2Score = metrics.r2_score(ytest,prediction)
+print("Bayesian")
 print(accuracyMeanSquared)
 print(accuracyVariance)
 print(accuracyR2Score)

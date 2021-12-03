@@ -91,7 +91,7 @@ featuresForModel = featuresForModel.transpose()
 xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
 
 #Experiment 13: Random Forest with group, accessory, human, near, face
-regressionModel = RandomForestRegressor(criterion = "mse")
+regressionModel = RandomForestRegressor(criterion = "poisson")
 regressionModel.fit(xtrain, ytrain)
 prediction = regressionModel.predict(xtest)
 accuracyMeanSquared = metrics.mean_squared_error(ytest, prediction)
@@ -107,7 +107,7 @@ count = 0
 accuracyR2Score = 0
 accuracyVariance = 0
 accuracyMeanSquared = 0
-regressionModel = RandomForestRegressor(criterion = "mse")
+regressionModel = RandomForestRegressor(criterion = "poisson")
 while(count < 5):
     xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
     regressionModel.fit(xtrain, ytrain)
@@ -131,7 +131,7 @@ count = 0
 accuracyR2Score = 0
 accuracyVariance = 0
 accuracyMeanSquared = 0
-regressionModel = RandomForestRegressor(criterion = "mse")
+regressionModel = RandomForestRegressor(criterion = "poisson")
 while(count < 10):
     xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
     regressionModel.fit(xtrain, ytrain)
@@ -161,7 +161,7 @@ featuresForModel = featuresForModel.transpose()
 xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
 
 #Experiment 16: Random Forest with group, accessory, face, human
-regressionModel = RandomForestRegressor(criterion = "mse")
+regressionModel = RandomForestRegressor(criterion = "poisson")
 regressionModel.fit(xtrain, ytrain)
 prediction = regressionModel.predict(xtest)
 accuracyMeanSquared = metrics.mean_squared_error(ytest, prediction)
@@ -177,7 +177,7 @@ count = 0
 accuracyR2Score = 0
 accuracyVariance = 0
 accuracyMeanSquared = 0
-regressionModel = RandomForestRegressor(criterion = "mse")
+regressionModel = RandomForestRegressor(criterion = "poisson")
 while(count < 5):
     xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
     regressionModel.fit(xtrain, ytrain)
@@ -201,7 +201,7 @@ count = 0
 accuracyR2Score = 0
 accuracyVariance = 0
 accuracyMeanSquared = 0
-regressionModel = RandomForestRegressor(criterion = "mse")
+regressionModel = RandomForestRegressor(criterion = "poisson")
 while(count < 10):
     xtrain, xtest, ytrain, ytest = train_test_split(featuresForModel, labels)
     regressionModel.fit(xtrain, ytrain)
